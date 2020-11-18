@@ -4,15 +4,15 @@ struct C2D {
 };
 class polygon {
 private:
-    int numberofvertices;
-    C2D *vertexcoordinates;
+    int number_of_vertices;
+    C2D *vertex_coordinates;
 public:
     polygon(const int numberofvertices, const C2D *vertexcoordinates);
-    //polygon();
-    ~polygon();
     polygon(const polygon& polygonobject);
     polygon(polygon&& polygonobject);
-    double areaofpolygon() const;
-    void printpolygoninfo() const;
-    polygon movepolygon(double x, double y) ;
+    ~polygon();
+    bool simple_or_complex() const;
+    double area_of_polygon() const;
+    void print_polygon_info() const;
+    polygon move_polygon(double x, double y) ;
 };
