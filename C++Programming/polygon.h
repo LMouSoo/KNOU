@@ -14,4 +14,5 @@ public:
     polygon(polygon&& polygonobject);
     double areaofpolygon() const;
     void printpolygoninfo() const;
+    polygon movepolygon(double x, double y) ;
 };
