@@ -29,6 +29,17 @@ polygon::~polygon()
 	delete[] vertex_coordinates;
 	cout << "소멸자호출" << endl;
 }
+double polygon::area_of_polygon() const
+{
+	double area = 0;
+	for(int i = 0; i < number_of_vertices; i++){
+		area += (vertex_coordinates[i].x*vertex_coordinates[i+1].y)-(vertex_coordinates[i].y*vertex_coordinates[i+1].x);
+	}
+	area += (vertex_coordinates[number_of_vertices-1].x*vertex_coordinates[0].y)-(vertex_coordinates[number_of_vertices-1].y*vertex_coordinates[0].x);
+	if (area < 0) area =-area;
+	area = area/2;
+	return area;
+}
 void polygon::print_polygon_info() const
 {
 	if (vertex_coordinates == nullptr){
@@ -42,7 +53,7 @@ void polygon::print_polygon_info() const
 	}
 	cout << "입니다." << endl;
 }
-polygon polygon::move_polygon(double x, double y)
+polygon polygon::move_polygon(const double x, const double y)
 {
 	polygon tmp(number_of_vertices);
 	for(int i = 0; i < number_of_vertices; i++){

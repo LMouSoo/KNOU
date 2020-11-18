@@ -14,5 +14,5 @@ public:
     bool simple_or_complex() const;
     double area_of_polygon() const;
     void print_polygon_info() const;
-    polygon move_polygon(double x, double y) ;
+    polygon move_polygon(const double x, const double y) ;
 };

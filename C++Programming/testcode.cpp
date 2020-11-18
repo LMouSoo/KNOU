@@ -20,13 +20,10 @@ int main ()
     }
     polygon poly1(inputnumberofvertices, inputvertexcoordinates);
     poly1.print_polygon_info();
-    polygon test2(poly1);
-    test2.print_polygon_info();
-    polygon test3(move(test2));
-    //polygon&& test3 = test2.movepolygon(1,1);
-    //polygon test4(test3);
-    test3.print_polygon_info();
-    test2.print_polygon_info();
-    //polygon *test = new polygon(angle,tri);
-    //polygon *test2 = new polygon(test);
+    cout << poly1.area_of_polygon() << endl;
+    polygon poly2(poly1);
+    poly2.print_polygon_info();
+    polygon poly3(move(poly2));
+    poly3.print_polygon_info();
+    poly2.print_polygon_info();
 }
